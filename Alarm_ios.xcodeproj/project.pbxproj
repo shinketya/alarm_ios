@@ -12,6 +12,7 @@
 		26965F0D2192C68D008BDCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26965F0B2192C68D008BDCE9 /* Main.storyboard */; };
 		26965F0F2192C68D008BDCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26965F0E2192C68D008BDCE9 /* Assets.xcassets */; };
 		26965F122192C68D008BDCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26965F102192C68D008BDCE9 /* LaunchScreen.storyboard */; };
+		26965F1B2192CC75008BDCE9 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26965F1A2192CC75008BDCE9 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		26965F0E2192C68D008BDCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26965F112192C68D008BDCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26965F132192C68E008BDCE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26965F1A2192CC75008BDCE9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26965F1B2192CC75008BDCE9 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				26965F062192C68D008BDCE9 /* Alarm_ios */,
 				26965F052192C68D008BDCE9 /* Products */,
+				26965F192192CC75008BDCE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				26965F132192C68E008BDCE9 /* Info.plist */,
 			);
 			path = Alarm_ios;
+			sourceTree = "<group>";
+		};
+		26965F192192CC75008BDCE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26965F1A2192CC75008BDCE9 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
