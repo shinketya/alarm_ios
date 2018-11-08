@@ -21,19 +21,25 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate, UIText
     
     
     @IBAction func setNotification(_ sender: Any) {
-        let textfieldNum:Int? = Int(timesavesecond.text!)
-        // タイトル、本文、サウンド設定の保持
+        let textfieldSecond:Int? = Int(timesavesecond.text!)
+        let textfieldMinute:Int? = Int(timesaveminute.text!)
+        let textfieldHour:Int? = Int(timesavehour.text!)
+        
         let content = UNMutableNotificationContent()
         content.title = "時間です"
-        if textfieldNum != nil{
-            content.subtitle = "時間分\(Int(textfieldNum!))秒経過しました"
+        if (textfieldSecond != nil && textfieldMinute == nil && textfieldHour == nil) {
+            content.subtitle = "\(Int(textfieldSecond!))秒経過しました"
+        } else if (textfieldSecond != nil && textfieldMinute != nil && textfieldHour == nil){
+            content.subtitle = "\(Int(textfieldMinute!))分\(Int(textfieldSecond!))秒経過しました"
+        } else if (textfieldSecond != nil && textfieldMinute != nil && textfieldHour != nil) {
+            content.subtitle = "\(Int(textfieldHour!))時間\(Int(textfieldMinute!))分\(Int(textfieldSecond!))秒経過しました"
         }
         content.body = "タップしてアプリを開いてください"
         content.sound = UNNotificationSound.default
         
         // seconds後に起動するトリガーを保持
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(textfieldNum ?? 10), repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(textfieldSecond ?? 10) + TimeInterval(textfieldMinute ?? 0)*60 + TimeInterval(textfieldHour ?? 0)*3600, repeats: false)
         
         // 識別子とともに通知の表示内容とトリガーをrequestに内包する
         let request = UNNotificationRequest(identifier: "Timer", content: content, trigger: trigger)
@@ -55,6 +61,12 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate, UIText
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (self.timesavesecond.isFirstResponder) {
             self.timesavesecond.resignFirstResponder()
+        }
+        if (self.timesaveminute.isFirstResponder) {
+            self.timesaveminute.resignFirstResponder()
+        }
+        if (self.timesavehour.isFirstResponder) {
+            self.timesavehour.resignFirstResponder()
         }
     }
     

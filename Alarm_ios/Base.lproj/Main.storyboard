@@ -19,13 +19,13 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-SO-Svu">
                                 <rect key="frame" x="165" y="220" width="46" height="327"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="start"/>
                                 <connections>
                                     <action selector="setNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wAD-kN-sAb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-LO-bg1">
-                                <rect key="frame" x="249" y="166" width="40" height="30"/>
+                                <rect key="frame" x="248.5" y="166" width="40.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -37,13 +37,13 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-cJ-vKm">
-                                <rect key="frame" x="91" y="166" width="40" height="30"/>
+                                <rect key="frame" x="91" y="166" width="39.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="s" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="quJ-HZ-jp9">
                                 <rect key="frame" x="303" y="166" width="20" height="30"/>
