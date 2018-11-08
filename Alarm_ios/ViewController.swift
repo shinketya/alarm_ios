@@ -9,9 +9,16 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController, UNUserNotificationCenterDelegate{
 
+class ViewController: UIViewController, UNUserNotificationCenterDelegate, UITextFieldDelegate{
+
+    
+    
+    @IBOutlet weak var timesavefield: UITextField!
+    
+    
     @IBAction func setNotification(_ sender: Any) {
+        let textfieldNum:Int? = Int(timesavefield.text!)
         // タイトル、本文、サウンド設定の保持
         let content = UNMutableNotificationContent()
         content.title = "時間です"
@@ -20,7 +27,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
         content.sound = UNNotificationSound.default
         
         // seconds後に起動するトリガーを保持
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(textfieldNum ?? 10), repeats: false)
         
         // 識別子とともに通知の表示内容とトリガーをrequestに内包する
         let request = UNNotificationRequest(identifier: "Timer", content: content, trigger: trigger)
@@ -37,6 +45,15 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    // UItextField以外の部分タッチでキーボード非表示
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (self.timesavefield.isFirstResponder) {
+            self.timesavefield.resignFirstResponder()
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

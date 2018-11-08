@@ -18,25 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-SO-Svu">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <rect key="frame" x="164" y="419" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="setNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wAD-kN-sAb"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-LO-bg1">
+                                <rect key="frame" x="139" y="172" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aVi-SO-Svu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Aku-SX-LyN"/>
-                            <constraint firstItem="aVi-SO-Svu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RkT-Kg-mpQ"/>
-                            <constraint firstItem="aVi-SO-Svu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="298" id="VcY-ch-Wri"/>
-                            <constraint firstItem="aVi-SO-Svu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="poL-Um-Tbb"/>
+                            <constraint firstItem="rEA-LO-bg1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="152" id="14u-Mz-aTs"/>
+                            <constraint firstItem="rEA-LO-bg1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="BzD-Rh-IJm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aVi-SO-Svu" secondAttribute="bottom" constant="218" id="UDW-iE-DeD"/>
+                            <constraint firstItem="rEA-LO-bg1" firstAttribute="centerX" secondItem="aVi-SO-Svu" secondAttribute="centerX" id="WlJ-NL-mpE"/>
+                            <constraint firstItem="aVi-SO-Svu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="fK9-lU-QJS"/>
+                            <constraint firstItem="aVi-SO-Svu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wwE-cu-o66"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timesavefield" destination="rEA-LO-bg1" id="p6u-Of-y3M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1930" y="-16"/>
         </scene>
     </scenes>
 </document>
