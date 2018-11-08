@@ -14,15 +14,20 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate, UIText
 
     
     
-    @IBOutlet weak var timesavefield: UITextField!
+    
+    @IBOutlet weak var timesavesecond: UITextField!
+    @IBOutlet weak var timesaveminute: UITextField!
+    @IBOutlet weak var timesavehour: UITextField!
     
     
     @IBAction func setNotification(_ sender: Any) {
-        let textfieldNum:Int? = Int(timesavefield.text!)
+        let textfieldNum:Int? = Int(timesavesecond.text!)
         // タイトル、本文、サウンド設定の保持
         let content = UNMutableNotificationContent()
         content.title = "時間です"
-        content.subtitle = "10秒経過しました"
+        if textfieldNum != nil{
+            content.subtitle = "時間分\(Int(textfieldNum!))秒経過しました"
+        }
         content.body = "タップしてアプリを開いてください"
         content.sound = UNNotificationSound.default
         
@@ -48,8 +53,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate, UIText
     
     // UItextField以外の部分タッチでキーボード非表示
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if (self.timesavefield.isFirstResponder) {
-            self.timesavefield.resignFirstResponder()
+        if (self.timesavesecond.isFirstResponder) {
+            self.timesavesecond.resignFirstResponder()
         }
     }
     
